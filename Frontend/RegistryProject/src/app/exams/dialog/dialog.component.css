@@ -1,0 +1,23 @@
+.mat-dialog-title{
+    
+    padding-left: 25px;
+}
+
+.noButton{
+  
+    padding-left: 20px;
+}
+
+.yesButton{
+   
+    padding-left: 15px;
+}
+
+.question{
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.notAvailable{
+  color: red;
+}

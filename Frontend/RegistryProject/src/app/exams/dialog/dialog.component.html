@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Enroll to exam</h1>
+<div mat-dialog-content>
+
+<p> {{data.subject}} </p>
+<p>{{data.date}}</p>
+<p>Enrolled students: {{data.nrEnrolled}} / {{data.totalPlaces}}  </p>
+
+
+<div *ngIf="data.totalPlaces==data.nrEnrolled" class="notAvailable">
+  <p>No available places!</p>
+</div>
+
+<div *ngIf="enrolled" class="notAvailable">
+  <p>You are already enrolled!</p>
+</div>
+
+<hr>
+
+
+
+  <p class="question">Enroll to this exam?</p>
+</div>
+<div mat-dialog-actions>
+
+  <div class="yesButton" >
+    <button mat-stroked-button (click)="onYesClick()" disabled={{disabledStatus}}>Yes</button>
+  </div>
+
+  <div class="noButton">
+  <button mat-stroked-button (click)=" onNoClick()">No</button>
+  </div>
+
+</div>

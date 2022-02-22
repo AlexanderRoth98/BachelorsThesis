@@ -1,0 +1,75 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 120px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.currentlylogged{
+  font-size: initial;
+  color: black;
+  font-weight: 500;
+  margin-left:1000px;
+
+  
+}
+
+
+.studentsButton{
+  margin-left: 13px;
+  font-weight: 550;
+}
+
+.studentsDrop{
+  margin-left: 13px;
+  font-size: 13px;
+}
+
+.professorsButton{
+  margin-left: 6px;
+  font-weight: 500;
+}
+
+.profesorsDrop{
+  margin-left: 12px;
+  font-size: 13px;
+}
+
+.examsButton{
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.myExmBtn{
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.enrlBtn{
+  font-weight: 500;
+  margin-left: 20px;
+  
+}
+
+.addExmBtn{
+  font-weight: 500;
+  margin-left: 6px;
+}
+.menuarea{
+  height: 45px;
+  margin-left: 18px;
+  margin-top: 10px;
+  
+}
+

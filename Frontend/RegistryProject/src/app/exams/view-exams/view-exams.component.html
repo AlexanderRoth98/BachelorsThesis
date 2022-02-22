@@ -1,0 +1,42 @@
+<div *ngIf="role=='professor'">
+  <full-calendar [contentHeight]=700 [fixedWeekCount]='false' (eventClick)="handleProfClick($event)" [firstDay]="1" defaultView="dayGridMonth" [plugins]="calendarPlugins"
+    [events]="professorCalendarEvents">
+  </full-calendar>
+</div>
+
+
+<div *ngIf="role=='admin'">
+  <full-calendar [contentHeight]=700 [fixedWeekCount]='false' [firstDay]="1" defaultView="dayGridMonth" [plugins]="calendarPlugins" [events]="adminCalendarEvents">
+  </full-calendar>
+</div>
+
+<div *ngIf="user.semester==6">
+  <button mat-stroked-button (click)=onShow2()>Year I </button>
+  <button mat-stroked-button (click)=onShow4()>Year II </button>
+  <button mat-stroked-button (click)=onShow6()>Year III </button>
+
+  
+</div>
+
+<div *ngIf="user.semester==4">
+  <button mat-stroked-button (click)=onShow2()>Year I </button>
+  <button mat-stroked-button (click)=onShow4()>Year II </button>
+</div>
+
+<div *ngIf="role=='student' && sem==6">
+  <full-calendar [contentHeight]=700 [fixedWeekCount]='false' (eventClick)="handleDateClick($event)" [firstDay]="1" defaultView="dayGridMonth" [plugins]="calendarPlugins"
+    [events]="studentCalendarEvents6">
+  </full-calendar>
+</div>
+
+<div *ngIf="role=='student' && sem==4">
+  <full-calendar [contentHeight]=700 [fixedWeekCount]='false'  (eventClick)="handleDateClick($event)" [firstDay]="1" defaultView="dayGridMonth" [plugins]="calendarPlugins"
+    [events]="studentCalendarEvents4">
+  </full-calendar>
+</div>
+
+<div *ngIf="role=='student' && sem==2">
+  <full-calendar [contentHeight]=700 [fixedWeekCount]='false'  (eventClick)="handleDateClick($event)" [firstDay]="1" defaultView="dayGridMonth" [plugins]="calendarPlugins"
+    [events]="studentCalendarEvents2">
+  </full-calendar>
+</div>

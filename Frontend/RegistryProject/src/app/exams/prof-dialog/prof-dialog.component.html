@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Enrolled Students</h1>
+<div mat-dialog-content>
+
+
+
+
+  <mat-list role="list">
+
+   <div *ngFor="let student of studentList; let i = index">
+      <mat-list-item role="listitem">{{i+1}}. {{student.firstName}} {{student.lastName}}, {{student.subgroup}}, {{student.studyCourse}}</mat-list-item>
+
+    </div>
+
+
+    <div *ngIf="isEmpty">
+      <mat-list-item role="listitem">No students enrolled at the moment!</mat-list-item>
+    </div>
+  </mat-list>
+
+  
+
+
+
+
+
+
+
+  <div class="bkBtn">
+    <button mat-stroked-button (click)=" onCancle()">Back</button>
+  </div>
+
+</div>

@@ -1,0 +1,36 @@
+.main-div{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-image: url(./backgroundimg.jpg);
+    
+
+    
+  }
+ 
+    
+  
+  mat-form-field{
+    width: 100%;
+  } 
+  mat-card {
+    height: 250px;
+    width: 250px;
+    margin: 2em auto;
+    text-align: center;
+    
+  }
+ 
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mat-card-header{
+   padding-left: 33%;
+   
+  }
+ 

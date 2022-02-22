@@ -1,0 +1,148 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="menuarea" >Menu</mat-toolbar>
+    <hr>
+
+
+    <div *ngIf="role=='admin'">
+      <mat-nav-list>
+
+       
+        <a mat-list-item (click)="onStudentsClicked()" class="studentsButton">Students</a>
+        <div *ngIf="studentsClicked">
+
+          <mat-list role="list">
+            <mat-list-item role="listitem"> <a mat-list-item (click)="routeChange('/student/POST')"
+                class="studentsDrop">Add</a>
+            </mat-list-item>
+            <mat-list-item role="listitem"> <a mat-list-item (click)="routeChange('/students')"
+                class="studentsDrop">View</a></mat-list-item>
+            <mat-list-item role="listitem"><a mat-list-item (click)="routeChange('/students/statistics')"
+                class="studentsDrop">Stats</a>
+            </mat-list-item>
+          </mat-list>
+
+
+
+        </div>
+        
+        <a mat-list-item (click)="onProfessorsClicked()" class="professorButton" class="professorsButton">Professors</a>
+        <div *ngIf="professorsClicked">
+
+
+          <mat-list role="list">
+            <mat-list-item role="listitem"> <a mat-list-item (click)="routeChange('/professor/POST')"
+                class="profesorsDrop">Add</a>
+            </mat-list-item>
+            <mat-list-item role="listitem"> <a mat-list-item (click)="routeChange('/professors')"
+                class="profesorsDrop">View</a>
+            </mat-list-item>
+            <mat-list-item role="listitem"> <a mat-list-item (click)="routeChange('/professors/statistics')"
+                class="profesorsDrop">Stats</a>
+            </mat-list-item>
+          </mat-list>
+
+
+
+
+
+        </div>
+
+        
+        <a mat-list-item (click)="routeChange('/exams')" class="examsButton">Exams</a>
+
+
+      </mat-nav-list>
+    </div>
+
+    <div *ngIf="role=='student'">
+      <mat-nav-list>
+        <a mat-list-item (click)="routeChange('/my-exams')" class="myExmBtn">My Exams</a>
+
+        <a mat-list-item (click)="routeChange('/exams')" class="enrlBtn">Enroll</a>
+
+      </mat-nav-list>
+    </div>
+
+    <div *ngIf="role=='professor'">
+      <mat-nav-list>
+
+
+        <a mat-list-item (click)="routeChange('/exams')" class="myExmBtn">My Exams</a>
+        <a mat-list-item (click)="routeChange('/exams/add')" class="addExmBtn">Add Exams</a>
+
+
+
+
+
+
+      </mat-nav-list>
+    </div>
+
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div class=currentlylogged>
+        {{user.email}}
+        <button mat-button (click)="routeChange('/login')">LogOut</button>
+      </div>
+    </mat-toolbar>
+
+    <div [ngSwitch]="activeRoute">
+
+
+      <div *ngSwitchCase="'/student/POST'">
+        <app-student></app-student>
+      </div>
+
+      <div *ngSwitchCase="'/professor/POST'">
+        <app-add-professor></app-add-professor>
+      </div>
+
+
+      <div *ngSwitchCase="'/students'">
+        <app-view-students></app-view-students>
+      </div>
+
+      <div *ngSwitchCase="'/professors'">
+
+        <app-view-professors></app-view-professors>
+      </div>
+
+
+      <div *ngSwitchCase="'/exams'">
+        <app-view-exams></app-view-exams>
+      </div>
+
+      <div *ngSwitchCase="'/exams/add'">
+        <app-add-exams></app-add-exams>
+      </div>
+
+      <div *ngSwitchCase="'/students/statistics'">
+        <app-statistics-students></app-statistics-students>
+      </div>
+
+
+      <div *ngSwitchCase="'/professors/statistics'">
+        <app-statistics-professors></app-statistics-professors>
+      </div>
+
+      <div *ngSwitchCase="'/my-exams'">
+        <app-my-exams></app-my-exams>
+      </div>
+
+      <div *ngSwitchCase="">
+        <app-view-exams></app-view-exams>
+      </div>
+
+
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

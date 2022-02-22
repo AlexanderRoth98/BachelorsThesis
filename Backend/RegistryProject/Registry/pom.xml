@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>RegistryProject</groupId>
+    <artifactId>RegistryProject</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>Registry</artifactId>
+  
+  
+  <dependencies>
+  
+  <dependency>
+			<groupId>StudentClient</groupId>
+			<artifactId>StudentClient</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>CourseClient</groupId>
+			<artifactId>CourseClient</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>ExamClient</groupId>
+			<artifactId>ExamClient</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>ProfessorClient</groupId>
+			<artifactId>ProfessorClient</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>UserrClient</groupId>
+			<artifactId>UserClient</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+  </dependencies>
+</project>

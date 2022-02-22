@@ -1,0 +1,17 @@
+<div>
+
+  <mat-grid-list cols="1" rowHeight="3:1">
+    <mat-grid-tile *ngFor="let obj of transferObject">
+      <div class="text-inside-grid"> 
+        <h4>{{obj.subject}}</h4>
+       <br> Date: {{obj.date}}
+       <br> Duration: {{obj.duration}}h
+       <br> Classroom: {{obj.classroom}}
+       <br> ECTS: {{obj.ects}} <button (click)="onRemove(obj.examId)" mat-button color="warn" class="myButton">Remove</button>
+      </div>
+      
+    </mat-grid-tile>
+
+
+  </mat-grid-list>
+</div>

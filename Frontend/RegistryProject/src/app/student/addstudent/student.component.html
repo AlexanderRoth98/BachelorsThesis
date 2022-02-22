@@ -1,0 +1,164 @@
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Basic Information</ng-template>
+
+      <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="7:1">
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile1">
+          <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name" formControlName="firstCtrl" required [(ngModel)]="firstName">
+          </mat-form-field>
+
+        </mat-grid-tile>
+
+
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile1">
+          <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last name" formControlName="firstCtrl" required [(ngModel)]="lastName">
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+
+      <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="7:1">
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile1">
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="first.last@student.unitbv.ro" formControlName="firstCtrl" required
+              [(ngModel)]="email">
+          </mat-form-field>
+
+        </mat-grid-tile>
+
+
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile1">
+          <mat-form-field>
+            <mat-label>Tel. Number</mat-label>
+            <input matInput placeholder="07XXXXXXXX" formControlName="firstCtrl" required [(ngModel)]="telNr">
+          </mat-form-field>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+
+
+
+
+
+
+      <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="7:1">
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile1">
+          <mat-form-field>
+            <mat-label>Age</mat-label>
+            <input matInput placeholder="Age" formControlName="firstCtrl" required [(ngModel)]="age">
+          </mat-form-field>
+
+        </mat-grid-tile>
+
+
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile1">
+          <mat-form-field>
+            <mat-label>Gender</mat-label>
+            <input matInput placeholder="M/F" formControlName="firstCtrl" required [(ngModel)]="gender">
+          </mat-form-field>
+        </mat-grid-tile>
+
+
+
+
+      </mat-grid-list>
+
+
+
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+
+  </mat-step>
+
+  
+
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Student Information</ng-template>
+
+     
+
+      <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="7:1">
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile2">
+          <mat-form-field>
+            <mat-label>Reigistration Number</mat-label>
+
+            <input matInput placeholder="Reg. Nr." formControlName="secondCtrl" required
+              [(ngModel)]="registrationNumber">
+
+
+
+              
+          </mat-form-field>
+
+        </mat-grid-tile>
+
+
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile2">
+          <mat-form-field>
+            <mat-label>Subgroup</mat-label>
+            <input matInput placeholder="10LF 471" formControlName="secondCtrl" required [(ngModel)]="subgroup">
+          </mat-form-field>
+        </mat-grid-tile>
+
+
+
+      </mat-grid-list>
+
+
+      <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="7:1">
+
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile2">
+          <mat-form-field>
+            <mat-label>Study Course</mat-label>
+            <input matInput placeholder="IAG" formControlName="secondCtrl" required [(ngModel)]="studyCourse">
+          </mat-form-field>
+        </mat-grid-tile>
+
+
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile2">
+          <mat-form-field>
+            <mat-label>Semester</mat-label>
+            <input matInput placeholder="Sem" formControlName="secondCtrl" required [(ngModel)]="semester">
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+
+  <mat-step>
+    <ng-template matStepLabel>Add Student</ng-template>
+    <p>
+      First Name: {{firstName}} <br>Last Name: {{lastName}} <br>
+      Email: {{email}} <br>Tel Nr: {{telNr}} <br>
+      Gender: {{gender}} <br>Age: {{age}} </p>
+    <hr>
+    <p>
+      Registration number: {{registrationNumber }}<br> Subgroup:{{subgroup}} <br>
+
+      Study Course: {{studyCourse}}<br> Semester: {{semester}}</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button (click)="createStudent()">Add</button>
+    </div>
+  </mat-step>
+
+
+
+</mat-vertical-stepper>

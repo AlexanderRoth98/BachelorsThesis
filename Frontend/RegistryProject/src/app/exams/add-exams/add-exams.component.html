@@ -1,0 +1,123 @@
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Exam Information</ng-template>
+
+
+
+
+      <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="7:1">
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile1">
+          <mat-form-field>
+            <mat-label>Course</mat-label>
+            <mat-select [ngModelOptions]="{standalone: true}" [(ngModel)]="courseId" name="courseId">
+              <mat-option *ngFor="let exam of exams" [value]="exam.value">
+                {{exam.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </mat-grid-tile>
+
+
+      </mat-grid-list>
+      <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="7:1">
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile1">
+          <mat-form-field>
+            <mat-label>Exam Id</mat-label>
+            <input matInput placeholder="ID" formControlName="firstCtrl" required [(ngModel)]="examId">
+          </mat-form-field>
+
+        </mat-grid-tile>
+
+
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile1">
+          <mat-form-field>
+            <mat-label>Start Date</mat-label>
+            <input matInput placeholder="YYYY-MM-DD" formControlName="firstCtrl" required [(ngModel)]="start">
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+
+      <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="7:1">
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile1">
+          <mat-form-field>
+            <mat-label>Time</mat-label>
+            <input matInput placeholder="HH:MM:SS" formControlName="firstCtrl" required
+              [(ngModel)]="time">
+          </mat-form-field>
+
+        </mat-grid-tile>
+
+
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile1">
+          <mat-form-field>
+            <mat-label>Duration</mat-label>
+            <input matInput placeholder="HH:MM" formControlName="firstCtrl" required [(ngModel)]="duration">
+          </mat-form-field>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+
+
+
+
+
+
+      <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="7:1">
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile1">
+          <mat-form-field>
+            <mat-label>Classroom</mat-label>
+            <input matInput placeholder="P.II.7" formControlName="firstCtrl" required [(ngModel)]="classroom">
+          </mat-form-field>
+
+        </mat-grid-tile>
+
+
+        <mat-grid-tile [class.fullWidth]="breakpoint == 1" class="myTile1">
+          <mat-form-field>
+            <mat-label>Total Places</mat-label>
+            <input matInput placeholder="places" formControlName="firstCtrl" required [(ngModel)]="totalPlaces">
+          </mat-form-field>
+        </mat-grid-tile>
+
+
+
+
+      </mat-grid-list>
+
+
+
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+
+  </mat-step>
+
+  
+
+  
+
+
+
+  <mat-step>
+    <ng-template matStepLabel>Add Exam</ng-template>
+    <p>
+      Course Id: {{courseId}} <br>Exam id: {{examId}} <br>
+      Date: {{start}} <br>Time: {{time}} <br>
+      Duration: {{duration}} <br>Classroom: {{classroom}}<br>Total Places: {{totalPlaces}} </p>
+    
+
+     
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button (click)="createExam()">Add</button>
+    </div>
+  </mat-step>
+
+
+
+</mat-vertical-stepper>

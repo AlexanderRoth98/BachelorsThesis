@@ -1,0 +1,22 @@
+.mat-grid-list{
+    width: 40%;
+    margin-left: 300px;
+    margin-top: 35px;
+    
+}
+
+.mat-grid-tile{
+    border: solid 2px #000;
+
+}
+
+.text-inside-grid {
+    position: absolute;
+    left: 5px;
+   
+  }
+
+  .myButton{
+      margin-left: 350px;
+  }
+  

@@ -1,0 +1,22 @@
+.mat-stepper-vertical {
+    margin-top: 8px;
+  }
+  
+  .mat-form-field {
+    margin-top: 16px;
+  }
+
+  .myTile1{
+    width: 200px !important ;  
+    
+  
+  }
+
+  .myTile2{
+    width: 200px !important ;
+  }
+
+  
+.fullWidth{
+  width: 100% !important ;
+}
